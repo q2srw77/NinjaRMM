@@ -14,7 +14,7 @@ param(
 	[string] $Name,
 	[Alias("c")]
 	[string] $CustomerToken,
-	[ValidateSet("Endpoint", "CIXA", "CIXAMTR", "All", "Encrypt")]
+	[ValidateSet("CIXE", "CIXA", "CIXAMTR", "All", "Encrypt")]
 	[Alias("p")]
 	[string] $ProductSelection
 )
@@ -69,8 +69,8 @@ if ($osInfo.ProductType -eq '1') {
 		Stop-Transcript
 		Exit 1
 	}  
-		elseif ($ProductSelection -eq 'Endpoint') {
-		$Products = "antivirus"
+		elseif ($ProductSelection -eq 'CIXE') {
+		$Products = "antivirus,intercept"
 	}  
 		elseif ($ProductSelection -eq 'CIXA') {
 		$Products = "antivirus,intercept"
@@ -92,8 +92,8 @@ else {
 		Stop-Transcript
 		Exit 1
 	}  
-		elseif ($ProductSelection -eq 'Endpoint') {
-		$Products = "antivirus"
+		elseif ($ProductSelection -eq 'CIXE') {
+		$Products = "antivirus,intercept"
 	}  
 		elseif ($ProductSelection -eq 'CIXA') {
 		$Products = "antivirus,intercept"
