@@ -75,6 +75,9 @@ if ($osInfo.ProductType -eq '1') {
 		elseif ($ProductSelection -eq 'CIXA') {
 		$Products = "antivirus,intercept"
 	}
+		elseif ($ProductSelection -eq 'CIXAXDR') {
+		$Products = "antivirus,intercept,xdr"
+	}
 		elseif ($ProductSelection -eq 'CIXAMTR') {
 		$Products = "antivirus,intercept,mdr"
 	}
@@ -97,6 +100,9 @@ else {
 	}  
 		elseif ($ProductSelection -eq 'CIXA') {
 		$Products = "antivirus,intercept"
+	}
+		elseif ($ProductSelection -eq 'CIXAXDR') {
+		$Products = "antivirus,intercept,xdr"
 	}
 		elseif ($ProductSelection -eq 'CIXAMTR') {
 		$Products = "antivirus,intercept,mdr"
