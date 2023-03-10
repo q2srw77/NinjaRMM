@@ -4,7 +4,7 @@
 # Platform: NinjaRMM
 # Purpose: Using the new Sophos Thin installer, 
 #          perform default install of Sophos Central using the defined parameters
-# Version 1.0
+# Version 1.1
 # -----------------------------------------------------------------------------------------------
 
 #Setup Customer Parameters
@@ -14,7 +14,7 @@ param(
 	[string] $Name,
 	[Alias("c")]
 	[string] $CustomerToken,
-	[ValidateSet("CIXE", "CIXA", "CIXAMTR", "All", "Encrypt")]
+	[ValidateSet("CIXE", "CIXA", "CIXAXDR", "MDR", "All", "Encrypt")]
 	[Alias("p")]
 	[string] $ProductSelection
 )
@@ -78,8 +78,8 @@ if ($osInfo.ProductType -eq '1') {
 		elseif ($ProductSelection -eq 'CIXAXDR') {
 		$Products = "antivirus,intercept,xdr"
 	}
-		elseif ($ProductSelection -eq 'CIXAMTR') {
-		$Products = "antivirus,intercept,mdr"
+		elseif ($ProductSelection -eq 'MDR') {
+		$Products = "antivirus,intercept,xdr,mdr"
 	}
 		elseif ($ProductSelection -eq 'ALL') {
 		$Products = "all"
@@ -104,8 +104,8 @@ else {
 		elseif ($ProductSelection -eq 'CIXAXDR') {
 		$Products = "antivirus,intercept,xdr"
 	}
-		elseif ($ProductSelection -eq 'CIXAMTR') {
-		$Products = "antivirus,intercept,mdr"
+		elseif ($ProductSelection -eq 'MDR') {
+		$Products = "antivirus,intercept,xdr,mdr"
 	}
 		elseif ($ProductSelection -eq 'ALL') {
 		$Products = "all"
