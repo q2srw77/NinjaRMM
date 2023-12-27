@@ -85,7 +85,7 @@ if ($osInfo.ProductType -eq '1') {
 		$Products = "all"
 	}
 		elseif ($ProductSelection -eq 'Encrypt') {
-		$Products = "DeviceEncryption"
+		$Products = "deviceEncryption"
 	}
 }
 # Sophos Server Product Selection
